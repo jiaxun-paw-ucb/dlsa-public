@@ -68,9 +68,9 @@ def run_famafrench():
     ff8.drop(columns=['RF'], inplace=True)
     ff8.to_csv("data/FamaFrench8Daily.csv")
 
-    FamaFrench = FamaFrench(logdir=os.path.join('residuals', 'famafrench'))
+    famaFrench = FamaFrench(logdir=os.path.join('residuals', 'famafrench'))
     for cap in [0.01]: 
-        FamaFrench.OOSRollingWindowPermnos(cap=cap, save=True, sizeWindow=60, listFactors=[0,1,3,5,8])
+        famaFrench.OOSRollingWindowPermnos(cap=cap, save=True, sizeWindow=60, listFactors=[0,1,3,5,8])
 
 
 def init_argparse():
